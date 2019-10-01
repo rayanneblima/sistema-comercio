@@ -1,0 +1,44 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package sistemacomercio;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import javax.swing.JOptionPane;
+import javax.swing.UIManager;
+/**
+ *
+ * @author Rayanne B. Lima
+ */
+public class Excluir_Produto {
+    
+    public static void main(String[] args){
+        //TODO: receber o nome do produto de outra tela e passar a tela onde o popup vai aparecer
+        UIManager.put("OptionPane.yesButtonText", "Sim"); 
+        UIManager.put("OptionPane.noButtonText", "Não");
+        int resposta = JOptionPane.showConfirmDialog(null, "Você tem certeza que deseja excluir o produto? (Ação Irreversível)", "Excluir Produto X",
+  JOptionPane.YES_NO_OPTION);
+        //System.out.println(resposta);
+        if(resposta == 0){
+            excluir_bd();
+        }else{
+            //TODO: voltar a tela anterior
+        }
+        
+    }
+
+    //Produto produto no ()
+    public static void excluir_bd(){
+        //TODO: conexão com banco de dados e receber o id_produto a ser excluído
+        //Connection con = Conexao.getConnetion();
+        //PreparedStatement pstm;
+        
+        //pstm = con.preparedStatement("DELETE FROM tblproduto WHERE produto.id_produto = '$id_produto'");
+        JOptionPane.showMessageDialog(null, "O produto foi excluído com sucesso.", "Sucesso!",
+  JOptionPane.INFORMATION_MESSAGE);
+    }
+    
+}
